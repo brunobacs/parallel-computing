@@ -6,23 +6,13 @@
 #include "include/master_slave.h"
 #include <omp.h>
 
-
 int main(int argc, char *argv[]) {
-    // 1 = tipo: slave = 1 = mestre-escravo // pool = 2 = work-pool
-    // 2 = linhas
-    // 3 = colunas
-    // 4 = px
-    // 5 = py
-    // 6 = escalar
-
     if (argc < 7) {
-        printf("Uso: mpirun -np <n_processos> ./programa <'slave' ou 'pool'> linhas colunas Px Py escalar\n");
+        printf("Use: mpirun -np <n_processos> ./programa <'slave' ou 'pool'> linhas colunas Px Py escalar\n");
         return 1;
     }
 
     int rank, size, linhas, colunas, escalar, estrategia, Px, Py;
-    char *tipo;
-
 
     if (strcmp(argv[1], "slave") == 0) {
         estrategia = 1;
@@ -68,6 +58,12 @@ int main(int argc, char *argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
+    if (Px == 0 || Py == 0) {
+        if (rank == 0) {
+            printf("Erro: Px e Py não podem ser zero.\n");
+        }
+        MPI_Abort(MPI_COMM_WORLD, 1);
+    }
 
     if (linhas % Px != 0 || colunas % Py != 0) {
         if (rank == 0) {
@@ -76,35 +72,25 @@ int main(int argc, char *argv[]) {
         MPI_Abort(MPI_COMM_WORLD, 1);
     }
 
-    // se for master-slave
-    if (estrategia ==1){
+    if (estrategia == 1) {
         int expected_workers = Px * Py + 1; // +1 para o mestre
-        
         if (size != expected_workers) {
             printf("Erro: o número de processos deve ser Px * Py + 1 (%d).\n", expected_workers);
             MPI_Abort(MPI_COMM_WORLD, 1);
         }
-        
         if (rank == 0) {
             master(Px, Py, linhas, colunas, escalar);
-        }else {
+        } else {
             slave();
         }
-    }
-    
-
-    // se for work pool
-    if(estrategia == 2){
-
+    } else if (estrategia == 2) {
         if (rank == 0) {
             root(Px, Py, linhas, colunas, escalar, (size - 1));
-        }else {
-            worker(rank, linhas, colunas);
+        } else {
+            worker(rank, linhas, colunas, linhas / Px, colunas / Py);
         }
     }
 
-
     MPI_Finalize();
-
     return 0;
 }

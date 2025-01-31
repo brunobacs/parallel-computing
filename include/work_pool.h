@@ -7,6 +7,6 @@
 #define TERMINATION 3
 
 void root(int Px, int Py, int M, int N, double escalar, int num_workers);
-void worker(int rank, int N, int M);
+void worker(int rank, int M, int N, int block_rows, int block_cols);
 
 #endif
