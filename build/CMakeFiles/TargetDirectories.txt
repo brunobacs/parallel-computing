@@ -1,0 +1,3 @@
+/home/bacs/Documentos/Git/CADProject/build/CMakeFiles/matrizes.dir
+/home/bacs/Documentos/Git/CADProject/build/CMakeFiles/edit_cache.dir
+/home/bacs/Documentos/Git/CADProject/build/CMakeFiles/rebuild_cache.dir
