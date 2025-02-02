@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "master_slave.h"
+#include <omp.h>
+#include <time.h>
 
 void master(int Px, int Py, int M, int N, double escalar) {
     int block_rows = M / Px;
@@ -15,20 +17,24 @@ void master(int Px, int Py, int M, int N, double escalar) {
     double *B = (double *)malloc(N * N * sizeof(double));
     double *C = (double *)malloc(M * N * sizeof(double));
     
+    srand(time(NULL));
+
     for (int i = 0; i < M * N; i++) {
-        A[i] = i % 100;
+        A[i] = rand() % 100;
         C[i] = 0;
     }
     for (int i = 0; i < N * N; i++) {
-        B[i] = (i % 10) + 1;
+        B[i] = (rand() % 10) + 1;
     }
 
-    // Envia trabalhos pros workers
+    int i_taskid;
     int worker_rank = 1;
+    int start_row, start_col;
+    
     for (int px = 0; px < Px; px++) {
         for (int py = 0; py < Py; py++) {
-            int start_row = px * block_rows;
-            int start_col = py * block_cols;
+            start_row = px * block_rows;
+            start_col = py * block_cols;
 
             printf("Sending block [%d,%d] to worker %d\n", px, py, worker_rank);
 
@@ -43,6 +49,7 @@ void master(int Px, int Py, int M, int N, double escalar) {
             worker_rank++;
         }
     }
+
 
     // recebe dos workers
     worker_rank = 1;
@@ -96,7 +103,10 @@ void slave() {
     MPI_Recv(&escalar, 1, MPI_DOUBLE, 0, ENVIA_BLOCO, MPI_COMM_WORLD, &status);
 
     double *C_block = (double *)malloc(block_rows * block_cols * sizeof(double));
+
+    #pragma omp parallel for
     for (int i = 0; i < block_rows; i++) {
+        printf("Processo do open mp %d\n", omp_get_thread_num());
         for (int j = 0; j < block_cols; j++) {
             C_block[i * block_cols + j] = 0;
             for (int k = 0; k < N; k++) {

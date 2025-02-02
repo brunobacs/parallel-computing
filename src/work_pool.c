@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../include/work_pool.h"
+#include <omp.h>
+#include <time.h>
 
 void worker(int rank, int M, int N, int block_rows, int block_cols) {
     MPI_Status status;
@@ -64,12 +66,14 @@ void root(int Px, int Py, int M, int N, double escalar, int num_workers) {
     double *B = (double *)malloc(N * N * sizeof(double));
     double *C = (double *)malloc(M * N * sizeof(double));
 
+    srand(time(NULL));
+
     for (int i = 0; i < M * N; i++) {
-        A[i] = i % 100;
+        A[i] = rand() % 100;
         C[i] = 0;
     }
     for (int i = 0; i < N * N; i++) {
-        B[i] = (i % 10) + 1;
+        B[i] = (rand() % 10) + 1;
     }
 
     int completed_blocks = 0;
@@ -111,6 +115,7 @@ void root(int Px, int Py, int M, int N, double escalar, int num_workers) {
             double *block_result = (double *)malloc(block_rows * block_cols * sizeof(double));
             MPI_Recv(block_result, block_rows * block_cols, MPI_DOUBLE, status.MPI_SOURCE, RESULT, MPI_COMM_WORLD, &status);
 
+            #pragma omp parallel for
             for (int i = 0; i < block_rows; i++) {
                 for (int j = 0; j < block_cols; j++) {
                     C[(block_row + i) * N + (block_col + j)] = block_result[i * block_cols + j];

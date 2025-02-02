@@ -55,4 +55,8 @@ CMakeFiles/matrizes.dir/src/work_pool.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/bacs/Documentos/Git/CADProject/src/../include/work_pool.h
+ /home/bacs/Documentos/Git/CADProject/src/../include/work_pool.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h

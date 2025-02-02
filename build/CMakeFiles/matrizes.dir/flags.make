@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/bacs/Documentos/Git/CADProject/include -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi
 
-C_FLAGS = 
+C_FLAGS =  -fopenmp
 

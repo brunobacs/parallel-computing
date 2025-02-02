@@ -56,5 +56,4 @@ CMakeFiles/matrizes.dir/matrizes.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
  /home/bacs/Documentos/Git/CADProject/include/work_pool.h \
- /home/bacs/Documentos/Git/CADProject/include/master_slave.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h
+ /home/bacs/Documentos/Git/CADProject/include/master_slave.h

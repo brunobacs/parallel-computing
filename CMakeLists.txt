@@ -14,6 +14,8 @@ set(SOURCES
     src/master_slave.c
 )
 
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fopenmp")
+
 add_executable(matrizes ${SOURCES})
 
 target_link_libraries(matrizes ${MPI_LIBRARIES})

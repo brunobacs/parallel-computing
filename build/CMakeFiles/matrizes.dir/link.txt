@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/matrizes.dir/matrizes.c.o CMakeFiles/matrizes.dir/src/work_pool.c.o CMakeFiles/matrizes.dir/src/master_slave.c.o -o matrizes  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 
+/usr/bin/cc  -fopenmp CMakeFiles/matrizes.dir/matrizes.c.o CMakeFiles/matrizes.dir/src/work_pool.c.o CMakeFiles/matrizes.dir/src/master_slave.c.o -o matrizes  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so 

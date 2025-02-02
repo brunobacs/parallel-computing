@@ -4,7 +4,6 @@
 #include <string.h>
 #include "include/work_pool.h"
 #include "include/master_slave.h"
-#include <omp.h>
 
 int main(int argc, char *argv[]) {
     if (argc < 7) {

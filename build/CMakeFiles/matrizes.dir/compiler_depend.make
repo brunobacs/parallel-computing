@@ -60,7 +60,6 @@ CMakeFiles/matrizes.dir/matrizes.c.o: /home/bacs/Documentos/Git/CADProject/matri
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
@@ -77,6 +76,7 @@ CMakeFiles/matrizes.dir/src/master_slave.c.o: /home/bacs/Documentos/Git/CADProje
   /usr/include/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
+  /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/endian.h \
@@ -94,6 +94,7 @@ CMakeFiles/matrizes.dir/src/master_slave.c.o: /home/bacs/Documentos/Git/CADProje
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -110,8 +111,10 @@ CMakeFiles/matrizes.dir/src/master_slave.c.o: /home/bacs/Documentos/Git/CADProje
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
   /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
@@ -124,6 +127,7 @@ CMakeFiles/matrizes.dir/src/master_slave.c.o: /home/bacs/Documentos/Git/CADProje
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
@@ -140,6 +144,7 @@ CMakeFiles/matrizes.dir/src/work_pool.c.o: /home/bacs/Documentos/Git/CADProject/
   /usr/include/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
+  /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/endian.h \
@@ -157,6 +162,7 @@ CMakeFiles/matrizes.dir/src/work_pool.c.o: /home/bacs/Documentos/Git/CADProject/
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -173,8 +179,10 @@ CMakeFiles/matrizes.dir/src/work_pool.c.o: /home/bacs/Documentos/Git/CADProject/
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
   /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
@@ -187,11 +195,18 @@ CMakeFiles/matrizes.dir/src/work_pool.c.o: /home/bacs/Documentos/Git/CADProject/
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h \
   /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h
 
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/time.h:
 
 /home/bacs/Documentos/Git/CADProject/src/master_slave.c:
 
@@ -256,6 +271,8 @@ CMakeFiles/matrizes.dir/src/work_pool.c.o: /home/bacs/Documentos/Git/CADProject/
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/features.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
