@@ -8,7 +8,5 @@
 
 void master(int Px, int Py, int M, int N, double escalar);
 void slave();
-void fill(int n, double* m);
-
 
 #endif
